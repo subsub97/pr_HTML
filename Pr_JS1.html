@@ -7,7 +7,23 @@
   <body>
     <h1>JavaScript</h1>
     <script>
-      document.write(1+1); // 자바스크립트는 동적이다.
+      const meet_date = new Date(2022,5,18,20,30,00);
+      let today = new Date();
+
+      let elapsedtime =  today.getTime() - meet_date.getTime();
+      let elapsedDay = Math.round(elapsedtime / 1000 / 60 / 60 /24)+1;
+      let Msec = elapsedtime / 1000;
+      let hours = Math.floor(Msec/3600);
+      let mins = parseInt((Msec-(3600*hours))/(60));
+      let sec = Math.floor(Msec%60)
+
+
+
+      document.writeln("D - " + elapsedDay);
+      document.writeln("경과시간 :"+ hours +"시간 "+mins+"분 "+sec+"초");
+
+
+
     </script>
     <h1>html</h1>
     1+1
