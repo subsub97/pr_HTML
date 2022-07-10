@@ -1,24 +1,35 @@
 <!doctype html>
 <html>
-<head>
-  <title>WEB - My Friends</title>
-  <meta charset="utf-8">
-</head>
-<body>
-  <h1>MY Friends</h1>
-  <ol>
-    <li><a href="img/my_Friends/tae.JPG">태원</a></li>
-    <li><a href="img/my_Friends/young.jpeg">영재</a></li>
-    <li><a href="img/my_Friends/chan.png">찬우</a></li>
-    <li><a href="img/my_Friends/jae.jpeg">재형</a></li>
-    <li><a href="img/my_Friends/yoon.jpeg">윤재</a></li>
-  </ol>
+  <head>
+    <title>WEB - My Friends</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <h1>MY Friends</h1>
+    <!-- 자동으로 시간대의 따라서 day,night 모드를 전환하기 -->
+    <input type ="button" value='night' onclick="
+    document.querySelector('body').style.backgroundColor = 'gray';
+    document.querySelector('body').style.color = 'white';
+    ">
+      <input type ="button" value='day' onclick = "
+      document.querySelector('body').style.backgroundColor = 'white';
+      document.querySelector('body').style.color = 'black'"
+      >
+
+      <ol>
+        <li><a href="img/my_Friends/tae.JPG">태원</a></li>
+        <li><a href="img/my_Friends/young.jpeg">영재</a></li>
+        <li><a href="img/my_Friends/chan.png">찬우</a></li>
+        <li><a href="img/my_Friends/jae.jpeg">재형</a></li>
+        <li><a href="img/my_Friends/yoon.jpeg">윤재</a></li>
+      </ol>
   <p>제가 오래동안 길들인 사람들 입니다.<br>
   성격은 안 좋고 말도 안 듣지만 말은 잘 듣는 친구들입니다.
   </p>
   <script>
 
-  document.write(1+1);
+
 
   </script>
 
