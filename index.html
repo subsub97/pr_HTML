@@ -3,6 +3,42 @@
   <head>
     <title>WEB - My Friends</title>
     <meta charset="utf-8">
+    <script>
+    var Links = {
+      setColor:function(color){
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+          alist[i].style.color = color;
+          i = i +1;
+        }
+      }
+    }
+    var Body = {
+      setColor:function(color){
+        document.querySelector('body').style.color = color;
+      },
+      setBackgroundColor:function(color){
+        document.querySelector('body').style.backgroundColor =color;
+      }
+    }
+    function nightDayHandler(self){
+      var target = document.querySelector('body');
+      if(self.value === 'night'){
+        Body.setBackgroundColor('black');
+        Body.setColor('white');
+        self.value = 'day';
+
+        Links.setColor('powderblue');
+      }else{
+        Body.setBackgroundColor('white');
+        Body.setColor('black');
+        self.value = 'night';
+
+        Links.setColor('blue');
+      }
+    }
+    </script>
   </head>
 
   <body>
@@ -10,44 +46,20 @@
     <!-- 자동으로 시간대의 따라서 day,night 모드를 전환추가-->
 
     <input type = "button" value = "night" onclick="
-    var target = document.querySelector('body');
-    if(this.value === 'night'){
-      target.style.backgroundColor = 'gray';
-      target.style.color = 'white';
-      this.value = 'day'
-    }
-    else{
-     target.style.backgroundColor = 'white';
-     target.style.color = 'black'
-     this.value = 'night'
-   }
-    ">
+    nightDayHandler(this);">
 
-      <ol>
+      <ul>
         <li><a href="img/my_Friends/tae.JPG">태원</a></li>
         <li><a href="img/my_Friends/young.jpeg">영재</a></li>
         <li><a href="img/my_Friends/chan.png">찬우</a></li>
         <li><a href="img/my_Friends/jae.jpeg">재형</a></li>
         <li><a href="img/my_Friends/yoon.jpeg">윤재</a></li>
-      </ol>
+      </ul>
   <p>제가 오래동안 길들인 사람들 입니다.<br>
   성격은 안 좋고 말도 안 듣지만 말은 잘 듣는 친구들입니다.
   </p>
-  <script>
-  </script>
 
-  <input type = "button" value = "night" onclick="
-  if(this.value === 'night'){
-    document.querySelector('body').style.backgroundColor = 'gray';
-    document.querySelector('body').style.color = 'white';
-    this.value = 'day'
-  }
-  else{
-   document.querySelector('body').style.backgroundColor = 'white';
-   document.querySelector('body').style.color = 'black'
-   this.value = 'night'
-  }
-  ">
+
 
 <div id="disqus_thread"></div>
 <script>

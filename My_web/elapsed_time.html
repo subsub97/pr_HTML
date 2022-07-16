@@ -16,7 +16,7 @@
     let elapsedDay = Math.round(elapsedtime / 1000 / 60 / 60 / 24) + 1;
     let Msec = elapsedtime / 1000;
     let hours = Math.floor(Msec / 3600);
-    let mins = parseInt('1000dkdkdk');
+    let mins = parseInt((Msec-(3600*hours))/(60));
     let sec = Math.floor(Msec % 60)
 
     document.writeln("D - " + elapsedDay);
