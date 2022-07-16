@@ -4,7 +4,9 @@ let a = "age";
 const user = {
   [n]: "Mike",
   [a]: 28,
-  [1 + 4]: 5
+  [1 + 4]: 5,
+  [4]: 6,
+  [3]: 1
 };
 
 console.log(user);
@@ -20,3 +22,10 @@ function makeObj(key, val) {
 const obj = makeObj('나이', 33);
 
 console.log(obj);
+
+const User = {
+  name: "Tom",
+  age: 38
+};
+const result = Object.assign({ gender: "male" }, User);
+console.log(result);
