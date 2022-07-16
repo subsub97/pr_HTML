@@ -27,5 +27,5 @@ const User = {
   name: "Tom",
   age: 38
 };
-const result = Object.assign({ gender: "male" }, User);
+const result = Object.entries(User);
 console.log(result);
