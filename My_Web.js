@@ -26,22 +26,13 @@ else{
 
 document.addEventListener("DOMContentLoaded", function() {
 
-
-
-        // 시간을 딜레이 없이 나타내기위한 선 실행
-
         realTimer();
-
-
 
         // 이후 0.5초에 한번씩 시간을 갱신한다.
 
-        setInterval(realTimer, 500);
+        setInterval(realTimer, 100);
 
     });
-
-
-
     // 시간을 출력
 
     function realTimer() {
@@ -61,16 +52,12 @@ document.addEventListener("DOMContentLoaded", function() {
 		const sec = nowDate.getSeconds();
 
 
-
-//nowTimes라는 아이디를 갖은 아래 수식을 HTML로 출력하겠다는 의
-
   document.getElementById("normal_Times").innerHTML =
 
               "■ 현재시간 :"+year + "-" + addzero(month) + "-" + addzero(date) + "&nbsp;" + hour + ":" + addzero(min) + ":" + addzero(sec);}
 
 
-// 55초 이상일때 초만 바뀌게 하는방법 어떻게 해야할까
-// 검정색으로 주다가 시간이 되면 if문을 통해서 초단위만 바꿔주
+
 
         // 1자리수의 숫자인 경우 앞에 0을 붙여준다.
 

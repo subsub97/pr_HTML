@@ -10,50 +10,52 @@
 
 
   <body>
-    <h1 id = "title"><a href="#">My Web</a></h1>
+    <h1 id = "title"><a href="index.html">My Web</a></h1>
 
-    <input id="night_day"type="button" value="night" onclick = "night_Dayhandler(this);">
+    <input id="night_day"type="button" value="night" onclick = "night_Dayhandler(this); 다름함수">
     <div class="menu">
       <!-- <a href="#" class ="menu_word">현재시간</a> -->
       <a href="#" class ="menu_word">D-day</a>
     </div>
-    <input type="text" id="input" >
-    <textarea id="output"></textarea>
-    <button onclick="input()">입력받기</button>
-    <button onclick="output()">출력하기</button>
 
+    <h1>MM(띄어쓰기)DD,YEAR순으로 입력하세요!</h1>
+    <h3 style="color:red">******* 꼭 날짜 사이에 띄어쓰기랑 , 넣기******</h3>
+    <p><input type="text" id="input" style="width:200px;height:30px;">  <button onclick="input()" style="width:px;height:30px;">Enter</button></p>
 
-<!-- 아래부터 자바스크립트 -->
-<script type="text/javascript">
-var temp;
-
-function input(){
-var input = document.getElementById("input").value;
-
-const meet_date = new Date(input);
-
-let today = new Date();
-
-let elapsedtime = today.getTime() - meet_date.getTime();
-let elapsedDay = Math.round(elapsedtime / 1000 / 60 / 60 / 24) + 1;
-let Msec = elapsedtime / 1000;
-let hours = Math.floor(Msec / 3600);
-let mins = parseInt((Msec-(3600*hours))/(60));
-let sec = Math.floor(Msec % 60)
-
-temp = elapsedDay;
-}
-
-
-
-function output(){
-document.getElementById("output").value = temp;
-}
+      &nbsp; &nbsp;     &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     ↓
+    <br>
+    <p><input type="text" id="output"style="width:200px;height:30px;"></input></p>
 
 
 
 
-</script>
+
+    <!-- 아래부터 자바스크립트 -->
+    <script type="text/javascript">
+    var temp;
+
+    function input(){
+    var input = document.getElementById("input").value;
+
+    const meet_date = new Date(input);
+
+    let today = new Date();
+
+    let elapsedtime = today.getTime() - meet_date.getTime();
+    let elapsedDay = Math.round(elapsedtime / 1000 / 60 / 60 / 24);
+    let Msec = elapsedtime / 1000;
+    let hours = Math.floor(Msec / 3600);
+    let mins = parseInt((Msec-(3600*hours))/(60));
+    let sec = Math.floor(Msec % 60)
+
+    temp = Number(elapsedDay);
+    if(temp>0){temp = elapsedDay + "일 지났습니다";}
+    else{temp = (Math.abs(temp)+1) + "일 남았습니다";}
+    document.getElementById("output").value = temp;
+    }
+
+
+    </script>
 
 
 
