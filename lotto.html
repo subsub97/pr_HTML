@@ -6,10 +6,22 @@
     <meta name="viewport" content="width = device-width, initial-scale =1.0">
     <title>JS Lotto</title>
     <link rel="stylesheet" href="./style.css">
+
   </head>
 
   <body>
+
+    <h1 id = "title"><a href="index.html">My Web</a></h1>
+
+    <input id="night_day"type="button" value="night" onclick = "night_Dayhandler(this);">
+    <div class="menu">
+      <!-- <a href="#" class ="menu_word">현재시간</a> -->
+      <a href="D-day.html" class ="menu_word">D-day</a>
+      <a href="lotto.html" class ="menu_word">LOTTO</a>
+    </div>
+
     <div class="container">
+      <input id="night_day"type="button" value="night" onclick = "night_Dayhandler(this);">
       <div class="lotto">
         <h3>로또 번호 추첨</h3>
 
@@ -20,6 +32,7 @@
         </div>
       </div>
     </div>
+    <script src="My_Web.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
