@@ -1,6 +1,6 @@
 *{box-sizing: border-box;}
 html{font-size:  32px;}
-body{margin: 0;}
+
 
 h3{
   display: grid;
@@ -9,7 +9,7 @@ h3{
 .container{
   width: 350px;
   height: 100vh;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +19,7 @@ h3{
 .lotto{
   text-align: center;
   display: grid;
+  margin-top: -700px;
 }
 
 .numbers{
@@ -54,7 +55,7 @@ button{
   /* 테두리를 둥글게 */
   border-radius: 6px;
   color : white;
-  background-color: gray;
+  background-color: orange;
   /* 커서를 버튼에 올리면 포인터 모양을 설정 할 수 있다. */
   cursor:pointer;
   margin: 3px
@@ -66,4 +67,50 @@ button:active{
   font-size:0.6em;
   width: 105px;
   height: 42px;
+}
+/*  사용 할 수 없을때는 색상을 바꾸기 */
+button:disabled
+{
+  background-color: gray;
+}
+
+.menu{
+  text-align: left;
+  margin-right: 60px;
+  margin-bottom: 60px;
+
+  width:100%;
+  height: 60px;
+  background-color:skyblue;
+  }
+
+.menu_word{
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 30px;
+  font-family: "Helvetica";
+
+  line-height: 200%;
+}
+
+body{
+  margin:0;
+}
+
+a{
+  text-decoration: none;
+}
+#title{
+  display: block;
+    font-size: 1em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+#normal_Times{
+  font-size:100%;
+
 }

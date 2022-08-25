@@ -51,6 +51,11 @@ drawButton.addEventListener("click",function() {
   }
   lottoNumbers.splice(0,6);
   cnt += 1;
+  // 1개 추첨은 한번만 발생 할 수 있게 하기
+  if(cnt >= 1){
+    drawButton.setAttribute('disabled',`true`);
+    f_drawButton.setAttribute('disabled',`true`);
+  }
 } )
 
 f_drawButton.addEventListener("click", function(){
@@ -80,7 +85,14 @@ f_drawButton.addEventListener("click", function(){
   }
   lottoNumbers.splice(0,6);}
 
+  // 5개 추첨은 한번만 발생 할 수 있게 하기
+  if(cnt >= 1){
+    f_drawButton.setAttribute('disabled',`true`);
+    drawButton.setAttribute('disabled',`true`);
+  }
 })
+
+
 
 resetButton.addEventListener('click', function(){
 
@@ -90,5 +102,37 @@ resetButton.addEventListener('click', function(){
   for(i=0; i < cnt; i++){
   document.querySelector(".numbers").remove()
   }
-  cnt = 0
+  if(cnt > 0){
+    f_drawButton.removeAttribute('disabled');
+    drawButton.removeAttribute('disabled');
+    cnt = 0;
+  }
 })
+
+//******** darkmode Code ***********8
+var Body = {
+  setcolor:function(color){
+    // document.querySelector('body').style.color = color;
+    $('body').css('color',color);
+  },
+  setBackgroundColor:function(color){
+    // document.querySelector('body').style.backgroundColor=color;
+    $('body').css('backgroundColor',color);
+  }
+}
+
+
+function night_Dayhandler(self){
+
+if(self.value === 'night'){
+  Body.setBackgroundColor('gray');
+  Body.setcolor('white');
+  self.value = 'day';
+}
+else{
+  Body.setBackgroundColor('white');
+  Body.setcolor('black');
+  self.value = 'night';
+}
+}
+//******** darkmode Code ***********8
