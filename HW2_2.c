@@ -4,6 +4,7 @@
 #include <ctype.h>
 #include<fcntl.h>
 #include<sys/wait.h>
+#include<wait.h>
 
 int main(int argc,char *argv[])
 {
@@ -20,7 +21,7 @@ int main(int argc,char *argv[])
             for(int i=0;i < n; ++i){ //change upper alpa
                 buf[i] = toupper(buf[i]);
             }
-            write(fd2[1],buf,n);
+            write(fd2[1],buf,10);
         }
         close(fd1[0]);
         close(fd2[1]);
@@ -33,7 +34,7 @@ int main(int argc,char *argv[])
             close(fd2[1]);
             output = creat("output2.dat",0666);
             while(( n = read(fd2[0],buf,10) != 0)){
-                write(output,buf,n);}
+                write(output,buf,10);}
             close(output);
             close(fd2[0]);
             exit(1);
@@ -45,7 +46,7 @@ int main(int argc,char *argv[])
             close(fd2[1]);
             close(fd2[0]);
             while(( n = read(input,buf,10) != 0)){
-                write(fd1[1],buf,n);
+                write(fd1[1],buf,10);
             }
             close(input);
             close(fd1[1]);
