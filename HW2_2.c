@@ -41,7 +41,7 @@ int main(int argc,char *argv[])
                 
         }
         else{ //parent process
-            input = open("input2.dat",0); //open file "input.dat" for reading
+            input = open("input2.txt",0); //open file "input.dat" for reading
             close(fd1[0]);
             close(fd2[1]);
             close(fd2[0]);
